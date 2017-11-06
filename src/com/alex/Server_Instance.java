@@ -29,6 +29,24 @@ public class Server_Instance extends Thread {
         }
     }
 
+    public char[] cleanString(char[] in)
+    {
+        char[] res;
+        int newSize = 0;
+        for (int i=0; i<in.length; i++)
+            if (!Settings.NOT_VALID_CHARS.contains(in[i]))
+                newSize++;
+        res = new char[newSize];
+        newSize = 0;
+        for (int i=0; i<in.length; i++)
+            if (!Settings.NOT_VALID_CHARS.contains(in[i]))
+            {
+                res[newSize] = in[i];
+                newSize++;
+            }
+        return res;
+    }
+
     @Override
     public void run() {
         try {
@@ -57,7 +75,7 @@ public class Server_Instance extends Thread {
             if (conLen>0) {
                 char[] arr = new char[conLen];
                 _in.read(arr, 0, conLen);
-                buf = new String(arr);
+                buf = new String(cleanString(arr));
                 System.out.println(buf);
                 if (buf.length() > 0) {
                     Core cc = new Core();
