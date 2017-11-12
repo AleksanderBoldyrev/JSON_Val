@@ -1,0 +1,1 @@
+curl -s --data-binary @test.json http://192.168.0.145
