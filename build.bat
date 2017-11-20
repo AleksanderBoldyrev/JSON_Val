@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Java\jdk1.7.0_80\bin\javac.exe" -sourcepath src\com\alex -classpath out\production\ValidatingService\com\alex;dep\json-simple-1.1.1.jar -d out\production\ValidatingService\com\alex src\com\alex\Main.java
