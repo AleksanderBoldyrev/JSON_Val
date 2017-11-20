@@ -1,5 +1,6 @@
 FROM alpine:3.2
 RUN apk --update add openjdk7-jre
+RUN apk add --no-cache bash git openssh
 # Set the working directory to /app
 WORKDIR /app
 
@@ -13,4 +14,6 @@ EXPOSE 80
 ENV NAME World
 
 # Run app.py when the container launches
-CMD ["/usr/bin/java", " -jar ValidatingService.jar -classpath com.alex.Main"]
+#CMD ["/usr/bin/java", " -jar ValidatingService.jar -classpath com.alex.Main"]
+
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/ValidatingService.jar"]
