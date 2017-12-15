@@ -6,7 +6,7 @@ package com.alex;
         import java.util.ArrayList;
 
 /**
- * Created by Sasha on 08.10.2015.
+ * Created by Alex on 08.10.2015.
  */
 public class Netw_Layer extends Thread{
     private ArrayList<Server_Instance> _serverThreads;
@@ -23,7 +23,9 @@ public class Netw_Layer extends Thread{
             System.out.println("Couldn't create service.");
         }
     }
-
+     /**
+     * Creates the Server instance as a new thread and starts accepting the data through socket.
+     */
     public void run()
     {
         Socket s = null;
