@@ -17,5 +17,5 @@
 
 
 FROM maven:3.3-jdk-8-onbuild
-CMD ["java","-jar","/target/ValidatingService.jar"]
+CMD ["java","-jar","/ValidatingService.jar"]
 EXPOSE 80
