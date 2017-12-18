@@ -39,6 +39,7 @@ public class Core {
             JSONObject error = new JSONObject();
 
             error.put(Settings.ERR_CODE,ex.getErrorType());
+            error.put("\n",ex.getErrorType());
             error.put(Settings.ERR_MES, ex.toString());
             error.put(Settings.ERR_PL,ex.getPosition());
 
