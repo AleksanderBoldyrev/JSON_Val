@@ -49,6 +49,8 @@ RUN set -x \
 #
 #   https://github.com/docker-library/openjdk/issues
 
+RUN apk update && apk add ca-certificates && update-ca-certificates && apk add openssl
+
 WORKDIR /app
 
 ADD . /app
