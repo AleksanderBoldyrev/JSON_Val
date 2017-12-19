@@ -18,10 +18,7 @@ public final class Settings {
     public static final String ERR_PL = "errorPlace";
 
     public static final ArrayList<Character> NOT_VALID_CHARS = new ArrayList<Character>() {{
-        //add('\r');
-        //add('\n');
         add('\u0000');
         add('\uFEFF');
-        //add(' ');
     }};
 }

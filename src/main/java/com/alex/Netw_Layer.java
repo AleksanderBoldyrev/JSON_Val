@@ -6,15 +6,15 @@ package com.alex;
         import java.util.ArrayList;
 
 /**
- * Created by Sasha on 08.10.2015.
+ * Created by Alex on 08.10.2015.
  */
 public class Netw_Layer extends Thread{
-    private ArrayList<Server_Instance> _serverThreads;
+    private ArrayList<com.alex.Server_Instance> _serverThreads;
     private int _port;
     private ServerSocket _ssocket;
 
     Netw_Layer(int port) {
-        _serverThreads = new ArrayList<Server_Instance>();
+        _serverThreads = new ArrayList<com.alex.Server_Instance>();
         _serverThreads.clear();
         _port = port;
         try {
@@ -23,7 +23,9 @@ public class Netw_Layer extends Thread{
             System.out.println("Couldn't create service.");
         }
     }
-
+     /**
+     * Creates the Server instance as a new thread and starts accepting the data through socket.
+     */
     public void run()
     {
         Socket s = null;
@@ -31,7 +33,7 @@ public class Netw_Layer extends Thread{
 
             try {
                 s = _ssocket.accept();
-                Server_Instance serv = new Server_Instance(s);
+                com.alex.Server_Instance serv = new com.alex.Server_Instance(s);
                 _serverThreads.add(serv);
                 Thread t = new Thread(serv);
                 t.start();

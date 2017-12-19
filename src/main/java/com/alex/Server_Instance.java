@@ -1,10 +1,8 @@
 package com.alex;
 
 import java.io.IOException;
-//import java.net.ServerSocket;
 import java.net.Socket;
 import java.io.*;
-//import java.util.ArrayList;
 
 /**
  * Created by Alex on 06.11.2017.
@@ -19,7 +17,6 @@ public class Server_Instance extends Thread {
     Server_Instance(Socket s) {
         _socket = s;
         _core = new Core();
-        //_parser.SetUserId(-1);
         _userId = -1;
         try {
             _in = new BufferedReader(new InputStreamReader(_socket.getInputStream()));
@@ -47,6 +44,9 @@ public class Server_Instance extends Thread {
         return res;
     }
 
+      /**
+     * Reader of the socket.
+     */
     @Override
     public void run() {
         try {
@@ -54,7 +54,6 @@ public class Server_Instance extends Thread {
             String resp = new String();
             String buf = new String();
             int conLen = 0;
-            //System.out.println("<HEAD>");
             while ((str = _in.readLine()) != null) {
                 if (str.equals("")) {
                     break;
@@ -71,7 +70,6 @@ public class Server_Instance extends Thread {
                     e.printStackTrace();
                 }
             }
-            //System.out.println("<BODY>");
             if (conLen>0) {
                 char[] arr = new char[conLen];
                 _in.read(arr, 0, conLen);
