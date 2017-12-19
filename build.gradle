@@ -21,7 +21,7 @@ dependencies {
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api 'org.apache.commons:commons-math3:3.6.1'
     compile 'com.googlecode.json-simple:json-simple:1.1'
-    compile 'com.bmuschko:gradle-docker-plugin:3.2.1'
+    //compile 'com.bmuschko:gradle-docker-plugin:3.2.1'
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:21.0'
@@ -30,7 +30,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-buildscript {
+/*buildscript {
     ext {
       //commonVersion = "1.0-SNAPSHOT"
       gradleDockerPluginVersion = "3.2.1"
@@ -53,3 +53,4 @@ apply plugin: 'com.bmuschko.gradle.docker.DockerRemoteApiPlugin'
 //import com.bmuschko.gradle.docker.tasks.image.*
 
 // use task classes
+*/
