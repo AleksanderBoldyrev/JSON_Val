@@ -30,8 +30,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-//mainClassName = 
-
 task jjar(type: Jar) {
     manifest {
         attributes 'Main-Class': 'com.alex.Main'
@@ -73,27 +71,3 @@ task docker(type: Docker) {
     defaultCommand =  ['java', "-jar", "opt/ValidatingService-all.jar"]
 
 }
-/*buildscript {
-    ext {
-      //commonVersion = "1.0-SNAPSHOT"
-      gradleDockerPluginVersion = "3.2.1"
-    }
-
-    repositories {
-      mavenLocal()
-    }
-
-    dependencies {
-      //classpath("common:common:${commonVersion}")
-      classpath("com.bmuschko:gradle-docker-plugin:${gradleDockerPluginVersion}")
-    }
-  }
-
-// use fully qualified class name
-apply plugin: 'com.bmuschko.gradle.docker.DockerRemoteApiPlugin'
-
-// import task classes
-//import com.bmuschko.gradle.docker.tasks.image.*
-
-// use task classes
-*/
