@@ -1,8 +1,3 @@
-#ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/ValidatingService.jar"]
-#FROM maven:3.3-jdk-8-onbuild
-#CMD ["java","-jar","/usr/src/app/target/validator-0.1-jar-with-dependencies.jar"]
-#EXPOSE 80
-
 #
 # NOTE: THIS DOCKERFILE IS GENERATED VIA "update.sh"
 #
