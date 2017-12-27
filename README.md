@@ -9,4 +9,6 @@ https://github.com/AleksanderBoldyrev/JSON_Val
 # To deploy:
 ./gradlew docker && docker run -d -p 80:80 validation-service
 
+(for gradle build: ./gradlew docker && docker run -d -p 80:80 validation-service)
+
 curl -s --data-binary @filename.json http://localhost:80
