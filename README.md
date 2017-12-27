@@ -7,7 +7,7 @@ In this project the JsonSimple library was used: https://github.com/fangyidong/j
 https://github.com/AleksanderBoldyrev/JSON_Val
 
 # To deploy:
-docker run -d -p 80:80 a13xx/json
+./gradlew docker && docker run -d -p 80:80 validation-service
 
 (for gradle build: ./gradlew docker && docker run -d -p 80:80 validation-service)
 
